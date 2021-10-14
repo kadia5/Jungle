@@ -1,0 +1,10 @@
+<tr>
+
+ <%= image_tag product.image.tiny, class: 'main-img' %>
+  <p class="description">
+    <%= product.description %>
+  </p>
+  <aside class="price">
+    <%= humanized_money_with_symbol product.price %>
+  </aside>
+  </tr>
