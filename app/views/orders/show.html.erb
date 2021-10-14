@@ -7,6 +7,33 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
+     
+  <% @order.line_items.each do |line_item| %>
+     <div class="img">
+    image
+      <%= line_item[:item_price_cents]%>
+    </div>
+   <dt>Name</dt>
+          <dd><%= @order.line_items %></dd>
+     <div class="descrip">
+    description
+      <%=line_item[:item_price_cents]%>
+    </div>
+    <div class="price">
+    price
+      <%= humanized_money_with_symbol line_item[:item_price_cents]%>
+    </div>
+    <div class="total">
+    total
+      <%= humanized_money_with_symbol line_item[:total_price_cents] %>
+    </div>
+  <% end %>
+ 
+     
+  
+   
+  
+
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
