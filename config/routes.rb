@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
   resources :about, only: [:index]
+  
 
   resource :cart, only: [:show] do
     post   :add_item
@@ -18,6 +19,14 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, except: [:edit, :update, :show]
   end
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+    # these routes are for showing users a login form, logging them in, and logging them out.
+    get '/login' => 'sessions#new'
+    post '/login' => 'sessions#create'
+    get '/logout' => 'sessions#destroy'
   
 
   
