@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
         last_name:"lastname"
       )
       @user.save
-      expect(@user.id).to be_present
+      expect(@user).to be_present
     end
     
     it 'is invalid when email does not exist' do
@@ -96,7 +96,7 @@ RSpec.describe User, type: :model do
         last_name:"lastname"
       )
       @user.save
-      expect(@user.id).to be_present
+      expect(@user).to be_present
     end
 
     it 'is invalid when email is taken' do

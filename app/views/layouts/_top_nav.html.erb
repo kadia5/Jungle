@@ -42,9 +42,13 @@
          <li>
            <%= link_to 'About', '/about' %>
         </li>  
-          <li>
-           <%= link_to 'Register/Login', '/signup' %>
-        </li> 
+         <% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+
+
         
         <li>
           <%= link_to cart_path do %>
